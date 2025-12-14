@@ -116,7 +116,7 @@ jobs:
           export PATH=$PATH:$(brew --prefix wxwidgets)/bin
           export CMAKE_PREFIX_PATH=/usr/local/opt/wxwidgets
           mkdir cmake_download_dir
-          DOWNLOAD_FILE_COIN=coin-latest-macos-monterey-clang14-x64.tar.gz
+          DOWNLOAD_FILE_COIN=coin-4.0.3-macos-monterey-clang14-x64.tar.gz
           RELEASE_ID=`curl -s -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" https://api.github.com/repos/coin3d/coin/releases | jq -r --arg COIN_REPO_TAG_NAME "CI-builds" '.[] | select(.tag_name==$COIN_REPO_TAG_NAME) | .id'`
           ASSET_ID=`curl -s -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" https://api.github.com/repos/coin3d/coin/releases/$RELEASE_ID | jq -r --arg DOWNLOAD_FILE_COIN "$DOWNLOAD_FILE_COIN" '.assets[] | select(.name==$DOWNLOAD_FILE_COIN) | .id'`
           export DOWNLOAD_ADDRESS_COIN=https://api.github.com/repos/coin3d/coin/releases/assets/$ASSET_ID
