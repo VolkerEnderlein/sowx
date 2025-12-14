@@ -54,25 +54,8 @@ jobs:
 
     - name: Create build with CMake
       run: |
-        sudo apt-key adv --fetch-keys https://repos.codelite.org/CodeLite.asc
-        sudo apt-add-repository 'deb https://repos.codelite.org/wx3.2.0/ubuntu/ jammy universe'
         sudo apt-get -y update
-        sudo apt-get -y install libboost-dev libwxbase3.2-0-unofficial \
-                libwxbase3.2unofficial-dev \
-                libwxgtk3.2-0-unofficial \
-                libwxgtk3.2unofficial-dev \
-                wx3.2-headers \
-                wx-common \
-                libwxgtk-media3.2-0-unofficial \
-                libwxgtk-media3.2unofficial-dev \
-                libwxgtk-webview3.2-0-unofficial \
-                libwxgtk-webview3.2unofficial-dev \
-                libwxgtk-webview3.2-0-unofficial-dbg \
-                libwxbase3.2-0-unofficial-dbg \
-                libwxgtk3.2-0-unofficial-dbg \
-                libwxgtk-media3.2-0-unofficial-dbg \
-                wx3.2-i18n \
-                wx3.2-examples
+        sudo apt-get -y install freeglut3-dev wx3.*  libboost-dev
         mkdir cmake_download_dir
         DOWNLOAD_FILE_COIN=coin-latest-Ubuntu2204-gcc11-x64.tar.gz
         RELEASE_ID=`curl -s -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" https://api.github.com/repos/coin3d/coin/releases | jq -r --arg COIN_REPO_TAG_NAME "CI-builds" '.[] | select(.tag_name==$COIN_REPO_TAG_NAME) | .id'`
