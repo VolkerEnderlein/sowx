@@ -2,7 +2,7 @@
 Coin GUI binding for wxWidgets
 
 [![Continuous Integration Build](https://github.com/coin3d/sowx/actions/workflows/continuous-integration-workflow.yml/badge.svg)](https://github.com/coin3d/sowx/actions/workflows/continuous-integration-workflow.yml)
-[![Code Scanning - Action](https://github.com/coin3d/sowx/actions/workflows/codeql-analysis.yml/badge.svg)](https://github.com/coin3d/sowx/actions/workflows/codeql-analysis.yml)
+[![Code Scanning - Action](https://github.com/coin3d/sowx/actions/workflows/codeql-analysis.yml/badge.svg)](https://github.com/coin3d/sowx/actions/workflows/codeql.yml)
 
 ## Platform supported
 
